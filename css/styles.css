@@ -2,9 +2,9 @@
   /* Colores principales */
   --color-fondo: #EAEBED;
   --color-marron: #C97841; /* Marrón */
-  --color-accent: #007AFF;
+  --color-marron_sec:#B78E6E;
   --color-surface: #ffffff;
-  --color-primary: #007AFF; /* Azul */
+  --color-primary: #000000; /* Azul */
   
   /* Colores de texto */
   --text-primary: var(--color-primary);
@@ -44,21 +44,6 @@
 }
 
 body {
-  font-family: var(--font-primary);
-  background: var(--color-background);
-  color: var(--text-primary);
-}
-
-
-
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
   font-family: 'Arial', sans-serif; /* Cambia por tu fuente si es necesario */
   background: var(--color-fondo);
   color: #222;
@@ -68,14 +53,56 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Helvetica', sans-serif; /* Cambia por tu fuente si es necesario */
   color: var(--text-primary);
 }
-.logo img {
-  width: 100px; /* Ajusta el tamaño según sea necesario */
-  height: auto;
-}
-.header {
-  background-color: var(--color-fondo);
-  padding: var(--spacing-md);
+
+header {
   display: flex;
+  justify-content:space-between;
+  align-items:center ;
+  padding: 1rem;
+  width: 100%;
+}
+
+.logo {
+  /* Estilos para el logo si son necesarios */
+  width: 15rem;
+  /* min-width: 6, 1.5rem; */
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.625rem;
+
+}
+.logo img {
+  width: 15rem; /* Ajusta el tamaño según sea necesario */
+  height: auto;
+
+}
+
+.navbar {
+  /* Estilos para la barra de navegación */
+  margin-right: 0;
+  width: 55rem;
+  justify-content:flex-end;
+  background-color: var(--color-fondo);
+
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: space-between;
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm) 0;
+}
+ 
+.navbar a {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: var(--text-base);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+}
+.navbar a:hover {
+  background-color: var(--color-accent);
+  color: var(--color_marron_sec);
+
 }

@@ -3,8 +3,10 @@
   --color-fondo: #EAEBED;
   --color-marron: #C97841; /* Marrón */
   --color-marron_sec:#B78E6E;
+  --color-marron_trans: rgba(201, 119, 65, 0.281); /* Marrón con transparencia */
   --color-surface: #ffffff;
-  --color-primary: #000000; /* Azul */
+
+  --color-primary: #000000; /*  negro */
   
   /* Colores de texto */
   --text-primary: var(--color-primary);
@@ -12,8 +14,12 @@
   --text-light: #666666;
   
   /* Tipografía */
-  --font-primary: 'Arial', sans-serif;
-  --font-secondary: 'Helvetica', sans-serif;
+  --font-cuerpo: 'Open Sans regular', open sans-regular, sans-serif;
+  --font-titulo: 'Valkyrie', valkyrie, sans-serif;
+  --font-subtitulo: 'Carmen Sans Regular', carmen-sans-regular, sans-serif;
+  --font-titulo-2_container: 'Carmen Sans Regular', carmen-sans-heavy, sans-serif;
+  --font-list-box: 'Carmen Sans Regular', carmen-sans-regular, sans-serif;
+  --font-texto-tratamiento: 'Carmen Sans Regular', carmen-sans-regular, sans-serif;
   
   /* Tamaños de fuente */
   --text-xs: 0.75rem;    /* 12px */
@@ -22,6 +28,10 @@
   --text-lg: 1.125rem;   /* 18px */
   --text-xl: 1.25rem;    /* 20px */
   --text-2xl: 1.5rem;    /* 24px */
+  --text-3xl: 1.875rem;  /* 30px */
+  --text-4xl: 2.25rem;   /* 36px */
+  --text-5xl: 3rem;     /* 48px */
+
   
   /* Espaciado y márgenes */
   --spacing-xs: 0.25rem;  /* 4px */
@@ -35,6 +45,31 @@
   --radius-md: 0.5rem;
   --radius-lg: 1rem;
 }
+/* Importación de fuentes */
+@font-face {
+    font-family: 'Carmen Sans Heavy';
+    src: url('../fonts/CarmenSansHeavy.otf') format('truetype');
+         font-weight: normal;
+         font-style: normal;
+     }
+@font-face {
+  font-family: 'Carmen Sans Regular';
+  src: url('../fonts/CarmenSansRegular.otf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+@font-face {
+  font-family: 'Valkyrie';
+  src: url('../fonts/Valky.otf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+@font-face {
+  font-family: 'Open Sans regular';
+  src: url('../fonts/opensans_regular.ttf') format('truetype');  
+        font-weight: normal;
+        font-style: normal;
+    }         
 
 /* Reset básico */
 * {
@@ -44,12 +79,19 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif; /* Cambia por tu fuente si es necesario */
+  font-family: var(--font-cuerpo), sans-serif; /* Cambia por tu fuente si es necesario */
   background: var(--color-fondo);
   color: #222;
 }
+h1{
+  font-family: var(--font-cuerpo), sans-serif; /* Cambia por tu fuente si es necesario */
+  color: var(--color-marron);
+  font-size: var(--text-5xl);
+  margin-bottom: var(--spacing-md);
 
-h1, h2, h3, h4, h5, h6 {
+}
+
+h2, h3, h4, h5, h6 {
   font-family: 'Helvetica', sans-serif; /* Cambia por tu fuente si es necesario */
   color: var(--text-primary);
 }
@@ -59,20 +101,23 @@ header {
   justify-content:space-between;
   align-items:center ;
   padding: 1rem;
-  width: 100%;
+  width: 80%;
+  margin-bottom: 2rem;
+  margin : 0 5rem 0 5rem;
+
 }
 
 .logo {
   /* Estilos para el logo si son necesarios */
   width: 15rem;
   /* min-width: 6, 1.5rem; */
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: flex-start;
   gap: 0.625rem;
 
 }
 .logo img {
-  width: 15rem; /* Ajusta el tamaño según sea necesario */
+  width: 20rem; /* Ajusta el tamaño según sea necesario */
   height: auto;
 
 }
@@ -80,9 +125,10 @@ header {
 .navbar {
   /* Estilos para la barra de navegación */
   margin-right: 0;
-  width: 55rem;
+  width: auto;
   justify-content:flex-end;
   background-color: var(--color-fondo);
+
 
 }
 .navbar ul {
@@ -97,12 +143,39 @@ header {
 .navbar a {
   text-decoration: none;
   color: var(--text-primary);
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   padding: var(--spacing-sm) var(--spacing-md);
-  border-radius: var(--radius-md);
+  /* border-radius: var(--radius-md); */
 }
 .navbar a:hover {
-  background-color: var(--color-accent);
-  color: var(--color_marron_sec);
+  background-color: var(--color-marron_trans);
+  color: var(--color-primary);
 
+}
+.banner  {
+  background-color: var(--color-marron);
+  padding: var(--spacing-xl); 
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+  height: auto;
+  margin: 0 auto;   
+}
+
+.banner h1 {
+
+  font-family: var(--font-titulo);
+  color: var(--color-surface);
+  font-size: var(--text-5xl);
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  justify-content: center;
+}
+
+.banner p {
+  color: var(--color-surface);
+  font-size: var(--text-lg);
+  text-align: center;
+  max-width: 600px;
 }

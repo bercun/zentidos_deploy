@@ -102,22 +102,22 @@ header {
   align-items:center ;
   padding: 1rem;
   width: 80%;
-  margin-bottom: 2rem;
-  margin : 0 5rem 0 5rem;
+  margin : 0 4rem 0 4rem;
+  background-color: var(--color-marron_sec);
 
 }
+ 
 
 .logo {
   /* Estilos para el logo si son necesarios */
-  width: 15rem;
-  /* min-width: 6, 1.5rem; */
-  /* flex-direction: column; */
+  max-width: 15rem;
+  display: flex;
   align-items: flex-start;
   gap: 0.625rem;
 
 }
 .logo img {
-  width: 20rem; /* Ajusta el tamaño según sea necesario */
+  width: 15rem; /* Ajusta el tamaño según sea necesario */
   height: auto;
 
 }
@@ -145,11 +145,84 @@ header {
   color: var(--text-primary);
   font-size: var(--text-sm);
   padding: var(--spacing-sm) var(--spacing-md);
-  /* border-radius: var(--radius-md); */
-}
+  }
 .navbar a:hover {
   background-color: var(--color-marron_trans);
   color: var(--color-primary);
+  border-radius: var(--radius-sm);
+  transition: background-color 0.3s ease, color 0.3s ease;  
 }
+
+
+.abrir {
+  display: none;
+}
+
+.close {
+  display: none;
+}
+
+
+/* dispositivos moviles */
+
+@media (max-width: 555px) {
+    header {
+        width: 100%; /* Ocupa todo el ancho */
+        margin: 0; /* Elimina los márgenes */
+        padding: 1rem; /* Mantiene el padding interno */
+        justify-content: flex-start; /* Alinea los elementos a la izquierda */
+    }
+
+    .logo {
+        margin-left: 0; /* Asegura que el logo esté pegado a la izquierda */
+    }
+
+    .navbar{
+      position: absolute;
+      border: #000000 solid 1px 1px 1px 1px;
+      width: 35%;;
+      right: 0;
+      top: 0;
+    }
+      
+  
+      
+
+  .navbar ul {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    justify-items: center;
+    font-size: var(--text-5xl);
+    padding : 5rem 0 5rem 0;
+    background-color: var(--color-marron_sec);
+    padding: var(--spacing-md);
+    display: block; /* Oculto por defecto */
+  }
+.navbar a {
+    padding: var(--spacing-sm) 0;
+    text-align: center;
+    width: 100%;
+  }
+  burro.close {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: var(--text-2xl);
+    color: var(--text-primary);
+    cursor: pointer;
+  }
+    
+    
+  .header{
+    margin-left: 0;
+  }
+}
+    
+    
+
 
 

@@ -178,17 +178,25 @@ header {
     }
 
     .navbar{
+      
+      display: flex;
       position: absolute;
+      align-items: center;
       border: #000000 solid 1px 1px 1px 1px;
-      width: 35%;;
+      background-color: var(--color-marron_sec);
+      width: 35%;
       right: 0;
       top: 0;
     }
       
-  
-      
-
-  .navbar ul {
+    .close {
+      display: block; /* Oculta el icono de cerrar por defecto */
+      margin-top: 1rem;
+      margin-left: 2rem ;
+    }
+    
+    
+    .navbar ul {
     flex-direction: column;
     position: absolute;
     top: 100%;
@@ -206,7 +214,7 @@ header {
     text-align: center;
     width: 100%;
   }
-  burro.close {
+  /* burro.close {
     display: block;
     position: absolute;
     top: 1rem;
@@ -214,7 +222,7 @@ header {
     font-size: var(--text-2xl);
     color: var(--text-primary);
     cursor: pointer;
-  }
+  } */
     
     
   .header{

@@ -3,7 +3,7 @@
   --color-fondo: #EAEBED;
   --color-marron: #C97841; /* Marrón */
   --color-marron_sec:#B78E6E;
-  --color-marron_trans: rgba(201, 119, 65, 0.281); /* Marrón con transparencia */
+  --color-marron_trans: rgba(201, 119, 65, 0.397); /* Marrón con transparencia */
   --color-surface: #ffffff;
 
   --color-primary: #000000; /*  negro */
@@ -101,9 +101,8 @@ header {
   justify-content:space-between;
   align-items:center ;
   padding: 1rem;
-  width: 80%;
   margin : 0 4rem 0 4rem;
-  background-color: var(--color-marron_sec);
+  background-color: var(--color-fondo);
 
 }
  
@@ -153,75 +152,51 @@ header {
   transition: background-color 0.3s ease, color 0.3s ease;  
 }
 
-
-.abrir {
-  display: none;
+.menu_h {
+  display: none; 
+  width: 2rem;  
+  height: 2rem;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-size: var(--text-2xl);
+  color: var(--text-primary);
+  background-image: url('../img/icon/6499731.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
 }
 
-.close {
-  display: none;
-}
 
 
-/* dispositivos moviles */
+
+
 
 @media (max-width: 555px) {
     header {
         width: 100%; /* Ocupa todo el ancho */
         margin: 0; /* Elimina los márgenes */
         padding: 1rem; /* Mantiene el padding interno */
-        justify-content: flex-start; /* Alinea los elementos a la izquierda */
+        justify-content: space-between; /* Alinea los elementos */
+        position: relative; /* Necesario para el posicionamiento de la barra de navegación */
+
+    }
+    .hidden {
+        display: none !important; /* Oculta el icono de cerrar por defecto */
     }
 
     .logo {
         margin-left: 0; /* Asegura que el logo esté pegado a la izquierda */
     }
-
-    .navbar{
-      
-      display: flex;
-      position: absolute;
-      align-items: center;
-      border: #000000 solid 1px 1px 1px 1px;
-      background-color: var(--color-marron_sec);
-      width: 35%;
-      right: 0;
-      top: 0;
-    }
-      
-    .close {
-      display: block; /* Oculta el icono de cerrar por defecto */
-      margin-top: 1rem;
-      margin-left: 2rem ;
-    }
     
-    
-    .navbar ul {
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 100%;
-    justify-items:flex-end;
-    font-size: var(--text-5xl);
-    padding : 5rem 0 5rem 0;
-    background-color: var(--color-marron_sec);
-    padding: var(--spacing-md);
-    display: block; /* Oculto por defecto */
-  }
-.navbar a {
-    padding: var(--spacing-sm) 0;
-    text-align: center;
-    width: 100%;
-  }
-   burro.close {
+    .menu_h {
     display: block;
     position: absolute;
     width: 2rem;
     height: 2rem; 
     top: 1rem;
     right: 1rem;
-     outline: none;
+    outline: none;
     border: none;
     background-color: transparent;
     font-size: var(--text-2xl);
@@ -231,10 +206,42 @@ header {
     background-repeat: no-repeat; 
     cursor: pointer;
   }
-    
-  .header{
-    margin-left: 0;
+
+    .navbar{
+      
+      display: flex;
+      position: absolute;
+      align-items: center;
+      border: #000000 solid 1px 1px 1px 1px;
+      background-color: var(--color-marron_trans);
+      width: 35%;
+      right: 0;
+      top: 0;
+
+    }
+      
+
+    .navbar ul {
+    flex-direction: column;
+    position: relative;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    justify-items:flex-end;
+    font-size: var(--text-5xl);
+    padding : 5rem 0 5rem 0;
+    background-color: var(--color-marron_trans);
+    padding: var(--spacing-md);
+    display: block; /* Oculto por defecto */
   }
+.navbar a {
+    padding: var(--spacing-sm) 0;
+    text-align: center;
+    width: 100%;
+  }
+   
+    
+  
 }
     
     

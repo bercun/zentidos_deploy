@@ -180,7 +180,7 @@ header {
     .navbar{
       position: absolute;
       border: #000000 solid 1px 1px 1px 1px;
-      width: 35%;;
+      width: 25%;;
       right: 0;
       top: 0;
     }
@@ -194,7 +194,7 @@ header {
     top: 100%;
     right: 0;
     width: 100%;
-    justify-items: center;
+    justify-items:flex-end;
     font-size: var(--text-5xl);
     padding : 5rem 0 5rem 0;
     background-color: var(--color-marron_sec);
@@ -206,13 +206,21 @@ header {
     text-align: center;
     width: 100%;
   }
-  burro.close {
+  .close {
     display: block;
     position: absolute;
+    width: 2rem;
+    height: 2rem; 
     top: 1rem;
     right: 1rem;
+     outline: none;
+    border: none;
+    background-color: transparent;
     font-size: var(--text-2xl);
     color: var(--text-primary);
+    background-image: url('../img/icon/6499731.png');
+    background-size: cover;
+    background-repeat: no-repeat; 
     cursor: pointer;
   }
     

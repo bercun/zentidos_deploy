@@ -169,36 +169,48 @@ header {
 
 /* estilo de carrusel */
 .carrusel {
-  width: 50rem;
-  max-width:40rem; /* Ancho máximo para el carrusel */
-  background-color: yellowgreen;
-
-
-  
+  width: 100%;
+  max-width: 1200px; /* Ajustamos el ancho máximo */
+  margin: 0 auto; /* Centramos el carrusel */
+  position: relative;
+  overflow: hidden;
 }
-.carrusel .carrusel_conteiner{
+.carrusel .carrusel_conteiner {
   width: 400%;
-  background-color: #B78E6E; /* Fondo marrón claro */
+  height: 100vh; /* Ajusta la altura según sea necesario */
   display: flex;
-  flex-flow: row nowrap; /* Mantiene las imágenes en una sola fila */
-  justify-content: flex-start; /* Alinea las imágenes al inicio */
-  align-items: center; /* Centra las imágenes verticalmente */
-  padding: var(--spacing-xs); /* Espaciado interno */
-  overflow-x: auto; /* Permite el desplazamiento horizontal */  
-  overflow:hidden; /* Oculta el desbordamiento vertical */
-  scroll-snap-type: x mandatory; /* Habilita el desplazamiento suave */   
-
-
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(0);
+}
+.carrusel .img {
+  width: 25%; /* 100% / 4 imágenes */
+  height: auto;
+  object-fit: cover;
+  flex-shrink: 0; /* Evita que las imágenes se compriman */
 }
 
-.carrusel .img{
-  width: calc(100% / 4); /* Divide el ancho del contenedor por 5 para mostrar 5 imágenes */
-  background-color: limegreen; /* Fondo verde para las imágenes */
-  
-    
-} 
+/* Controles del carrusel (opcional) */
+.carrusel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--color-marron_trans);
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+}
 
- 
+.carrusel-prev {
+  left: 1rem;
+}
+
+.carrusel-next {
+  right: 1rem;
+}
 
 /* estilos para la section nosotras */
 
@@ -270,22 +282,23 @@ header {
     }
     
     .menu_h {
-    display: block;
-    position: absolute;
-    width: 2rem;
-    height: 2rem; 
-    top: 1rem;
-    right: 1rem;
-    outline: none;
-    border: none;
-    background-color: transparent;
-    font-size: var(--text-2xl);
-    color: var(--text-primary);
-    background-image: url('../img/icon/6499731.png');
-    background-size: cover;
-    background-repeat: no-repeat; 
-    cursor: pointer;
-  }
+        display: block;
+        position: absolute;
+        width: 2rem;
+        height: 2rem; 
+        top: 1rem;
+        right: 1rem;
+        outline: none;
+        border: none;
+        background-color: transparent;
+        font-size: var(--text-2xl);
+        color: var(--text-primary);
+        background-image: url('../img/icon/6499731.png');
+        background-size: cover;
+        background-repeat: no-repeat; 
+        cursor: pointer;
+        z-index: 1001; /* Asegura que esté por encima del navbar */
+    }
 
     .navbar{
       
@@ -299,7 +312,7 @@ header {
       flex-direction: column; 
       right: 0;
       top: 0;
-
+      z-index: 1000;
     }
       
 
@@ -315,8 +328,11 @@ header {
     background-color: var(--color-marron_trans);
     padding: var(--spacing-md);
     display: block; /* Oculto por defecto */
-  }
-.navbar a {
+    z-index: 1000;
+    }
+
+
+  .navbar a {
     padding: var(--spacing-sm) 0;
     text-align: center;
     width: 100%;

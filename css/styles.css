@@ -380,6 +380,16 @@ header {
     text-align: center;
     width: 100%;
   }
+
+  .nostras_texto {
+  display: flex;
+  width: 28.375rem;
+  height: 26.875rem;
+  min-width: 0.0625rem;
+  max-width: 100%;
+  flex-direction: column;
+  justify-content: center;
+
    
     
   

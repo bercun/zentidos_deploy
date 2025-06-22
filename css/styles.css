@@ -95,6 +95,14 @@ h2, h3, h4, h5, h6 {
   font-family: 'Helvetica', sans-serif; /* Cambia por tu fuente si es necesario */
   color: var(--text-primary);
 }
+hr {
+  display: flex;
+  justify-content: center;
+  /* font-family: var(--font-titulo); */
+  color: var(--color-marron);
+  font-size: var(--text-5xl);
+  margin-bottom: var(--spacing-md);
+}
 
 header {
   display: flex;
@@ -228,7 +236,7 @@ header {
 .nosotras h1 {
   display: flex;
   justify-content: center;
-  font-family: var(--font-titulo);
+  /* font-family: var(--font-titulo); */
   color: var(--color-marron);
   font-size: var(--text-5xl);
   margin-bottom: var(--spacing-md);
@@ -253,6 +261,8 @@ header {
   background-color: var(--color-marron);
   margin: var(--spacing-md) 0;    
 }
+
+
 .nostras_texto {
   display: flex;
   width: 28.375rem;
@@ -263,6 +273,39 @@ header {
   justify-content: center;
   flex-shrink: 0;
 }
+
+.servicios {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  padding: var(--spacing-lg);
+  background-color: var(--color-fondo);
+  border-radius: var(--radius-md);
+  margin: var(--spacing-lg) auto;
+  max-width: 1200px; /* Ancho máximo para la sección */
+}
+
+
+  .servicios hr{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: none;
+  height: 2px;
+  background-color: var(--color-marron);
+  margin: var(--spacing-md) 0; 
+  }   
+
+
+  .titulo h1 {
+  display: flex;
+  justify-content: center;
+  color: var(--color-marron);
+  font-size: var(--text-5xl);
+  margin-bottom: var(--spacing-md);
+}
+
 
 @media (max-width: 555px) {
     header {

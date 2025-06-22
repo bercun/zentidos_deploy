@@ -3,7 +3,7 @@
   --color-fondo: #EAEBED;
   --color-marron: #C97841; /* Marrón */
   --color-marron_sec:#B78E6E;
-  --color-marron_trans: rgba(201, 119, 65, 0.397); /* Marrón con transparencia */
+  --color-marron_trans: rgba(201, 119, 65, 0.486); /* Marrón con transparencia */
   --color-surface: #ffffff;
 
   --color-primary: #000000; /*  negro */
@@ -167,10 +167,90 @@ header {
   cursor: pointer;
 }
 
+/* estilo de carrusel */
+.carrusel {
+  width: 50rem;
+  max-width:40rem; /* Ancho máximo para el carrusel */
+  background-color: yellowgreen;
 
 
+  
+}
+.carrusel .carrusel_conteiner{
+  width: 400%;
+  background-color: #B78E6E; /* Fondo marrón claro */
+  display: flex;
+  flex-flow: row nowrap; /* Mantiene las imágenes en una sola fila */
+  justify-content: flex-start; /* Alinea las imágenes al inicio */
+  align-items: center; /* Centra las imágenes verticalmente */
+  padding: var(--spacing-xs); /* Espaciado interno */
+  overflow-x: auto; /* Permite el desplazamiento horizontal */  
+  overflow:hidden; /* Oculta el desbordamiento vertical */
+  scroll-snap-type: x mandatory; /* Habilita el desplazamiento suave */   
 
 
+}
+
+.carrusel .img{
+  width: calc(100% / 4); /* Divide el ancho del contenedor por 5 para mostrar 5 imágenes */
+  background-color: limegreen; /* Fondo verde para las imágenes */
+  
+    
+} 
+
+ 
+
+/* estilos para la section nosotras */
+
+.nosotras {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  padding: var(--spacing-lg);
+  background-color: var(--color-fondo);
+  border-radius: var(--radius-md);
+  margin: var(--spacing-lg) auto;
+  max-width: 1200px; /* Ancho máximo para la sección */
+}
+
+.nosotras h1 {
+  display: flex;
+  justify-content: center;
+  font-family: var(--font-titulo);
+  color: var(--color-marron);
+  font-size: var(--text-5xl);
+  margin-bottom: var(--spacing-md);
+}
+
+.nosotras_cuerpo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Hace que los elementos se envuelvan cuando no hay espacio */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: var(--spacing-lg);
+}
+.nosotras hr{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: none;
+  height: 2px;
+  background-color: var(--color-marron);
+  margin: var(--spacing-md) 0;    
+}
+.nostras_texto {
+  display: flex;
+  width: 28.375rem;
+  height: 26.875rem;
+  min-width: 0.0625rem;
+  max-width: 28.375rem;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+}
 
 @media (max-width: 555px) {
     header {
@@ -212,9 +292,11 @@ header {
       display: flex;
       position: absolute;
       align-items: center;
-      border: #000000 solid 1px 1px 1px 1px;
+      border-radius: var(--radius-md);
       background-color: var(--color-marron_trans);
-      width: 35%;
+      width: auto;
+      height: auto;
+      flex-direction: column; 
       right: 0;
       top: 0;
 
@@ -243,8 +325,8 @@ header {
     
   
 }
-    
-    
+
+
 
 
 

@@ -85,7 +85,7 @@ body {
   color: #222;
 }
 h1{
-  font-family: var(--font-cuerpo), sans-serif; /* Cambia por tu fuente si es necesario */
+  font-family: var(--font-titulo), sans-serif; /* Cambia por tu fuente si es necesario */
   color: var(--color-marron);
   font-size: var(--text-5xl);
   margin-bottom: var(--spacing-md);
@@ -93,7 +93,7 @@ h1{
 }
 
 h2, h3, h4, h5, h6 {
-  font-family: 'Helvetica', sans-serif; /* Cambia por tu fuente si es necesario */
+  font-family: var(--font-subtitulo), sans-serif; /* Cambia por tu fuente si es necesario */
   color: var(--text-primary);
 }
 hr {
@@ -310,6 +310,25 @@ header {
   font-size: var(--text-5xl);
   margin-bottom: var(--spacing-md);
 }
+
+.servicio {
+  border : 1px solid var(--color-marron_sec);
+  width: 30%;
+}
+  
+
+.servicios img {
+  width: 100%;
+  height: auto;
+}
+
+.servicios h2 {
+  font-family: var(--font-titulo-2_container);
+  color: var(--color-marron);
+  font-size: var(--text-3xl);
+  margin: var(--spacing-md) 0;
+}
+ 
 
 
 @media (max-width: 555px) {

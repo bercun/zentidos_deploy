@@ -4,17 +4,37 @@ console.log('Script loaded');
 menu_switch = document.querySelector('#menu_h');
 navbar = document.querySelector('#navbar');
 
+// Inicializar navbar como oculta en móvil
+if (window.innerWidth <= 768) {
+    navbar.classList.add('hidden');
+}
+
 menu_switch.addEventListener('click', function() {
     console.log('Menu switch clicked');
-    if (navbar.classList.contains('hidden')) {
-        navbar.classList.remove('hidden');
-        } else {
-        navbar.classList.add('hidden');
-        menu_switch.classList.remove('active');
-        console.log('Menu closed');
+    navbar.classList.toggle('hidden');
+    menu_switch.classList.toggle('active');
+});
+
+// Cerrar menú al hacer click fuera de él
+document.addEventListener('click', function(event) {
+    if (!navbar.contains(event.target) && !menu_switch.contains(event.target)) {
+        if (window.innerWidth <= 768) {
+            navbar.classList.add('hidden');
+            menu_switch.classList.remove('active');
+        }
     }
 });
-// Close the menu when clicking outside of it   
+
+// Manejar cambios de tamaño de ventana
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+        navbar.classList.remove('hidden');
+        menu_switch.classList.remove('active');
+    } else {
+        navbar.classList.add('hidden');
+    }
+});
+
 // carrusel
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.querySelector('.carrusel_conteiner');

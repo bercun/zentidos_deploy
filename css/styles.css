@@ -284,6 +284,12 @@ header {
   gap: var(--spacing-lg); /* Espaciado entre párrafos */
 
 }
+.nostras_texto p {
+  font-family: var(--font-cuerpo);
+  color: var(--text-primary);
+  font-size: var(--text-sm);
+  margin: var(--spacing-sm) 0; /* Margen entre párrafos */
+}
 
 .servicios_conteiner {
   display: flex;

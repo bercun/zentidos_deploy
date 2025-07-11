@@ -110,9 +110,12 @@ h2, h3, h4, h5, h6 {
 hr {
   display: flex;
   justify-content: center;
-  color: var(--color-marron) ;
-  font-size: var(--text-5xl);
-  margin-bottom: var(--spacing-xl);
+  align-items: center;
+  width: 100%;
+  border: none;
+  height: 0.05rem;
+  background-color: var(--color-marron);
+  margin: 1rem 0 4rem 0; /* Margen superior e inferior */; 
 }
 
 header {
@@ -311,6 +314,7 @@ header {
   background-color: var(--color-fondo);
   border-radius: var(--radius-md);
   margin: var(--spacing-lg) auto;
+  margin-bottom: var(--spacing-md);
   max-width: 1200px; /* Ancho máximo para la sección */
   
 }
@@ -326,6 +330,19 @@ header {
   background-color: var(--color-marron);
   margin: var(--spacing-md) 0; 
 }
+
+
+.servicio {
+  /* border : 1px solid var(--color-marron_sec); */
+  width: 30%;
+  height: fit-content;
+  overflow: hidden; /* Previene desbordamiento */
+  box-sizing: border-box; /* Incluye borders en el cálculo del ancho */
+  margin-bottom: var(--spacing-md);
+}
+
+
+
 .servicio_img {
     max-width: 100%; /* Cambiamos a 100% del contenedor padre */
     width: 100%; /* Ocupa todo el ancho del contenedor */
@@ -351,19 +368,6 @@ header {
 
 }
 
-.servicio {
-  border : 1px solid var(--color-marron_sec);
-  width: 30%;
-  height: fit-content;
-  overflow: hidden; /* Previene desbordamiento */
-  box-sizing: border-box; /* Incluye borders en el cálculo del ancho */
-}
-  
-
-/* .servicio img {
-  width: 100%;
-  height: auto;
-} */
 
 .servicio h2 {
   font-family: var(--font-titulo-2_container);
@@ -383,7 +387,6 @@ header {
 .lista_servicios {
   display: flex;
   flex-direction: row;
-  align-items: center;
   padding: var(--spacing-lg);
   background-color: var(--color-fondo);
   border-radius: var(--radius-md);
@@ -393,10 +396,28 @@ header {
 .lista_servicios li {
   font-family: var(--font-list-box);
   color: var(--text-primary);
-  font-size:var(--text-xxs); /* Ajusta el tamaño de fuente según sea necesario */
+  font-size:var(--text-xs); /* Ajusta el tamaño de fuente según sea necesario */
   margin: var(--spacing-sm) 1rem; /* Ajusta el margen para pantallas pequeñas */
-  list-style-type: none; /* Elimina los puntos de la lista */
+  list-style-type:disc; /* Cambia el tipo de viñeta */ 
 }
+  .head_regalar {
+    font-family: var(--font-titulo-2_container);
+    color: var(--color-primary); 
+    font-size: var(--text-sm);
+    margin-left: var(--spacing-xs);
+    padding-top: var(--spacing-xs);  
+  } 
+    
+  .lista_regalar li {
+    font-family: var(--font-cuerpo);
+    color: var(--color-primary);
+    font-size:var(--text-sm); /* Ajusta el tamaño de fuente según sea necesario */
+    margin: var(--spacing-sm); /* Ajusta el margen para pantallas pequeñas */
+    margin-left: var(--spacing-md);
+    list-style-type:disc; /* Cambia el tipo de viñeta */ 
+    
+  }
+
  
 
 
@@ -490,6 +511,12 @@ header {
     height: 50vh; /* Ajusta la altura según sea necesario */
   }
 
+  .img_nosotras {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: 100%; /* Ocupa toda la altura del contenedor */
+    object-fit: cover; /* Mantiene las proporciones sin distorsión */
+  }
+
 
   .servicios_conteiner {
     display: flex;
@@ -513,8 +540,6 @@ header {
     margin: var(--spacing-sm) 1rem; /* Ajusta el margen para pantallas pequeñas */  
   }; 
    
-    
-  
 }
 
 

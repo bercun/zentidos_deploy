@@ -112,6 +112,7 @@ hr {
   justify-content: center;
   align-items: center;
   width: 100%;
+  max-width: 1200px; /* Ancho máximo para la línea */;
   border: none;
   height: 0.05rem;
   background-color: var(--color-marron);
@@ -310,13 +311,13 @@ header {
   display: flex;
   flex-direction: column;
   align-items: space-between;
+  justify-content: center;
   padding: var(--spacing-lg);
   background-color: var(--color-fondo);
   border-radius: var(--radius-md);
   margin: var(--spacing-lg) auto;
   margin-bottom: var(--spacing-md);
-  max-width: 1200px; /* Ancho máximo para la sección */
-  
+  max-width: 1200px; 
 }
 
 
@@ -354,8 +355,8 @@ header {
   .titulo {
   display: flex;    
   flex-direction: column;
-  align-items: center;    
-  }
+  align-items: center;
+ }
 
 
   .titulo h1 {
@@ -405,7 +406,8 @@ header {
     color: var(--color-primary); 
     font-size: var(--text-sm);
     margin-left: var(--spacing-xs);
-    padding-top: var(--spacing-xs);  
+    padding-top: var(--spacing-xs);
+    text-align: center;  
   } 
     
   .lista_regalar li {
@@ -423,7 +425,7 @@ header {
 
     .carousel-container {
       max-width: 900px;
-      margin: 90px auto 0 auto;
+      margin: var(--spacing-xl) auto 0 auto;
       position: relative;
       padding: 80px 0 40px 0;
       /* height: 370px; */

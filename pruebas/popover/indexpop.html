@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>GSAP Popover Demo</title>
+  <style>
+    body { font-family: sans-serif; padding: 40px; }
+    .btn { padding: 14px 30px; background: #4ba9c9; color: #fff; border: none; border-radius: 5px; cursor: pointer;}
+    .popover {
+      position: absolute;
+      top: 80px;
+      left: 80px;
+      min-width: 210px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+      padding: 24px 18px;
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0.8);
+    }
+    .popover.visible {
+      pointer-events: auto;
+    }
+  </style>
+</head>
+<body>
+  <button class="btn" id="showPopover">Mostrar Popover</button>
+  <div class="popover" id="popover">
+    <strong>¡Hola!</strong><br>
+    Este es un popover animado con GSAP.
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script>
+    const btn = document.getElementById('showPopover');
+    const popover = document.getElementById('popover');
+    let visible = false;
+
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation(); // Evita que el click se propague al document
+      
+      if (!visible) {
+        // Mostrar popover
+        popover.classList.add('visible');
+        gsap.to(popover, { 
+          scale: 1, 
+          opacity: 1, 
+          y: -10, 
+          duration: 0.4, 
+          ease: "back.out(1.7)" 
+        });
+        visible = true;
+      } else {
+        // Ocultar popover
+        gsap.to(popover, { 
+          scale: 0.8, 
+          opacity: 0, 
+          y: 0, 
+          duration: 0.3, 
+          ease: "power2.in", 
+          onComplete: () => {
+            popover.classList.remove('visible');
+            visible = false;
+          }
+        });
+      }
+    });
+
+    // Cerrar popover al hacer click fuera
+    document.addEventListener('click', (e) => {
+      if (visible && !popover.contains(e.target) && !btn.contains(e.target)) {
+        gsap.to(popover, { 
+          scale: 0.8, 
+          opacity: 0, 
+          y: 0, 
+          duration: 0.3, 
+          ease: "power2.in", 
+          onComplete: () => {
+            popover.classList.remove('visible');
+            visible = false;
+          }
+        });
+      }
+    });
+
+    // Evitar que el click dentro del popover lo cierre
+    popover.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+  </script>
+</body>
+</html>

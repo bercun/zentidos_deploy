@@ -544,6 +544,23 @@ header {
       }
     }
 
+    .centro_oficial {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--spacing-lg);
+      background-color: var(--color-fondo);
+      border-radius: var(--radius-md);
+      margin: var(--spacing-xl) auto;
+      max-width: 1200px; /* Ancho máximo para la sección */
+    }
+
+    .centro_oficial img {
+      width: 100%; /* Ocupa todo el ancho del contenedor */
+      height: auto; /* Mantiene la proporción de la imagen */
+      max-width: 15rem; /* Ancho máximo para la imagen */
+    }
 
 
 @media (max-width: 555px) {

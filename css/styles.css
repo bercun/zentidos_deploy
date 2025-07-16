@@ -563,6 +563,37 @@ header {
     }
 
 
+
+    .sedes {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: var(--spacing-lg);
+      background-color: var(--color-fondo);
+      border-radius: var(--radius-md);
+      margin: var(--spacing-lg) auto;
+      max-width: 1200px; /* Ancho máximo para la sección */
+    }
+
+
+    .sede_img{
+      align-items: center;
+      justify-content: center;
+      width: 20rem; /* Ocupa todo el ancho del contenedor */
+      height: auto; /* Mantiene la proporción de la imagen */
+      max-width: 15rem; /* Ancho máximo para la imagen */
+      object-fit: cover; /* Mantiene las proporciones sin distorsión */
+      max-height: 10rem; /* Altura máxima para la imagen */
+      margin: var(--spacing-md);  
+
+      max-width: 1 ; /* Ancho máximo para la imagen */
+    }
+      
+
+    
+
+
 @media (max-width: 555px) {
     header {
         width: 100%; /* Ocupa todo el ancho */

@@ -105,7 +105,7 @@ h1{
 
 h2, h3, h4, h5, h6 {
   font-family: var(--font-subtitulo), Carmen sans-serif; /* Cambia por tu fuente si es necesario */
-  color: var(--color-marron); 
+  color: var(--color-primary); 
 }
 hr {
   display: flex;
@@ -567,7 +567,6 @@ header {
     .sedes {
       display: flex;
       flex-direction: row;
-      align-items: center;
       justify-content: center;
       padding: var(--spacing-lg);
       background-color: var(--color-fondo);
@@ -575,6 +574,8 @@ header {
       margin: var(--spacing-lg) auto;
       max-width: 1200px; /* Ancho máximo para la sección */
     }
+
+    
 
 
     .sede_img{
@@ -589,9 +590,78 @@ header {
 
       max-width: 1 ; /* Ancho máximo para la imagen */
     }
-      
 
-    
+    .sede h2{
+      margin : var(--spacing-lg) 0 var(--spacing-lg) 0;
+    }
+
+    .sede p {
+      width: 60%;
+      line-height: 2;
+      font-family: var(--font-cuerpo);
+      color: var(--text-primary);
+      font-size: var(--text-sm);
+      margin: var(--spacing-sm) 1rem; /* Ajusta el margen para pantallas pequeñas */
+    }
+
+    footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: var(--spacing-lg);
+      background-color: var(--color-fondo);
+      border-radius: var(--radius-md);
+      margin: var(--spacing-lg) auto;
+      max-width: 1200px; /* Ancho máximo para el footer */
+    }
+
+    .footer_conteiner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+   
+
+    .footer_logo img {
+      max-width: 10%; /* Ajusta el tamaño del logo */
+    }
+
+    .footer_texto p {
+      margin: 0.5rem 0;
+      color: var(--text-secondary);
+      font-size: var(--text-sm);
+    }
+    .footer_texto a {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: var(--text-sm);
+    }
+    .contacto h3 {
+      margin: var(--spacing-md) 0;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+    footer .redes a {
+      margin: 0 0.5rem;
+    }
+    footer .redes img {
+      width: 24px; /* Ajusta el tamaño de los iconos de redes sociales */
+      height: 24px;
+      transition: transform 0.3s ease;
+    }
+    footer .redes img:hover {
+      transform: scale(1.9); /* Efecto de zoom al pasar el cursor */
+    }
+    .footer_logo:hover {
+       transform: scale(1.1);
+    filter: brightness(1.2); /* Aumenta el brillo */
+    transition: all 0.3s ease;
+    } 
 
 
 @media (max-width: 555px) {
@@ -711,11 +781,42 @@ header {
     color: var(--text-primary);
     font-size: 10px;;
     margin: var(--spacing-sm) 1rem; /* Ajusta el margen para pantallas pequeñas */  
-  }; 
-   
+  }
+  .centro_oficial {
+    flex-direction: column; /* Cambia a columna para pantallas pequeñas */
+    align-items: center; /* Centra los elementos */
+    justify-content: center; /* Centra los elementos verticalmente */
+  }
+
+  .centro_oficial img {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-width: 15rem; /* Ancho máximo para la imagen */
+    margin-bottom: var(--spacing-md); /* Añade un margen inferior */
+  }
+  
+  .sedes {
+    display: flex;
+    flex-direction: column !important; /* Cambia a columna para pantallas pequeñas */
+    align-items: center; /* Centra los elementos */
+  }
+  .sede {
+    width: 90%; /* Un poco menos del 100% para mejor presentación */
+    max-width: 600px; /* Limita el ancho máximo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+  }
+  .sede_img {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-width: 15rem; /* Ancho máximo para la imagen */
+    object-fit: cover; /* Mantiene las proporciones sin distorsión */
+    max-height: 10rem; /* Altura máxima para la imagen */
+  }
 }
-
-
-
 
 

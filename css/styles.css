@@ -603,10 +603,6 @@ header {
       font-size: var(--text-sm);
       margin: var(--spacing-sm) 1rem; /* Ajusta el margen para pantallas pequeñas */
     }
-    .sede span {
-      font-family: var(--font-subtitulo);
-      color: var(--color-marron);
-    }
 
     footer {
       display: flex;
@@ -668,57 +664,158 @@ header {
     } 
 
 
-/* Botón catálogo */
-.catalogo-section {
-  display: flex;
-  justify-content: end;
-  margin: var(--spacing-xl) 0;
-  padding: var(--spacing-lg) 0;
-}
-
-.btn-catalogo {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  padding: var(--spacing-sm) var(--spacing-md);
-  background: linear-gradient(135deg, var(--color-marron), var(--color-marron_sec));
-  color: var(--color-primary);
-  border: none;
-  border-radius: var(--radius-md);
-  font-family: var(--font-li);
-  font-size: var(--text-sm);
-  font-weight: var(--text-light);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(201, 119, 65, 0.3);
-  text-decoration: none;
-}
-
-.btn-catalogo:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(201, 119, 65, 0.4);
-  background: linear-gradient(135deg, var(--color-marron_sec), var(--color-marron));
-}
-
-.btn-catalogo:active {
-  transform: translateY(0);
-}
-
-.btn-icon {
-  width: 40px;
-  /* filter: brightness(0) invert(1);  */
-}
-
-/* Responsive */
 @media (max-width: 555px) {
-  .btn-catalogo {
-    font-size: var(--text-base);
-    padding: var(--spacing-md) var(--spacing-lg);
+    header {
+        width: 100%; /* Ocupa todo el ancho */
+        margin: 0; /* Elimina los márgenes */
+        padding: 1rem; /* Mantiene el padding interno */
+        justify-content: space-between; /* Alinea los elementos */
+        position: relative; /* Necesario para el posicionamiento de la barra de navegación */
+
+    }
+    
+    .hidden {
+        display: none !important; /* Oculta el icono de cerrar por defecto */
+    }
+
+    .logo {
+        margin-left: 0; /* Asegura que el logo esté pegado a la izquierda */
+    }
+    
+    .menu_h {
+        display: block;
+        position: absolute;
+        width: 2rem;
+        height: 2rem; 
+        top: 1rem;
+        right: 1rem;
+        outline: none;
+        border: none;
+        background-color: transparent;
+        font-size: var(--text-2xl);
+        color: var(--text-primary);
+        background-image: url('../img/icon/6499731.png');
+        background-size: cover;
+        background-repeat: no-repeat; 
+        cursor: pointer;
+        z-index: 1001; /* Asegura que esté por encima del navbar */
+    }
+
+    .navbar{
+      
+      display: flex;
+      position: absolute;
+      align-items: center;
+      border-radius: var(--radius-md);
+      background-color: var(--color-marron_trans);
+      width: auto;
+      height: auto;
+      flex-direction: column; 
+      right: 0;
+      top: 0;
+      z-index: 1000;
+    }
+      
+
+    .navbar ul {
+    flex-direction: column;
+    position: relative;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    justify-items:flex-end;
+    font-size: var(--text-5xl);
+    padding : 5rem 0 5rem 0;
+    background-color: var(--color-marron_trans);
+    padding: var(--spacing-md);
+    display: block; /* Oculto por defecto */
+    z-index: 1000;
+    }
+
+
+  .navbar a {
+    padding: var(--spacing-sm) 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .nostras_texto {
+  display: flex;
+  width: 28.375rem;
+  height: 26.875rem;
+  min-width: 0.0625rem;
+  max-width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  }
+
+  .carrusel .carrusel_conteiner {
+    width: 400%; /* Ocupa todo el ancho disponible */
+    height: 50vh; /* Ajusta la altura según sea necesario */
+  }
+
+  .img_nosotras {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: 100%; /* Ocupa toda la altura del contenedor */
+    object-fit: cover; /* Mantiene las proporciones sin distorsión */
+  }
+
+
+  .servicios_conteiner {
+    display: flex;
+    flex-direction: column; /* Cambia a columna para pantallas pequeñas */
+    align-items: center; /* Centra los elementos */
+    
+  }
+
+  .servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-fondo);
+    width: 100%; /* Ocupa todo el ancho disponible */
+  
+  }
+  .servicio p {
+    font-family: var(--font-cuerpo);
+    color: var(--text-primary);
+    font-size: 10px;;
+    margin: var(--spacing-sm) 1rem; /* Ajusta el margen para pantallas pequeñas */  
+  }
+  .centro_oficial {
+    flex-direction: column; /* Cambia a columna para pantallas pequeñas */
+    align-items: center; /* Centra los elementos */
+    justify-content: center; /* Centra los elementos verticalmente */
+  }
+
+  .centro_oficial img {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-width: 15rem; /* Ancho máximo para la imagen */
+    margin-bottom: var(--spacing-md); /* Añade un margen inferior */
   }
   
-  .btn-icon {
-    width: 16px;
-    height: 16px;
+  .sedes {
+    display: flex;
+    flex-direction: column !important; /* Cambia a columna para pantallas pequeñas */
+    align-items: center; /* Centra los elementos */
+  }
+  .sede {
+    width: 90%; /* Un poco menos del 100% para mejor presentación */
+    max-width: 600px; /* Limita el ancho máximo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+  }
+  .sede_img {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-width: 15rem; /* Ancho máximo para la imagen */
+    object-fit: cover; /* Mantiene las proporciones sin distorsión */
+    max-height: 10rem; /* Altura máxima para la imagen */
   }
 }
 

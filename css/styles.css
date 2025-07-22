@@ -332,6 +332,50 @@ header {
   margin: var(--spacing-md) 0; 
 }
 
+.boton-catalogo-logo {
+  text-align: end;
+  margin: var(--spacing-xl) 0;
+}
+
+.btn-catalogo-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  background: var(--color-fondo);
+  color: var(--color-marron);
+  padding: var(--spacing-md) var(--spacing-xl);
+  text-decoration: none;
+  border-radius: var(--radius-lg);
+  font-family: var(--font-list-box);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid var(--color-marron);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-catalogo-logo:hover {
+  background: var(--color-marron);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(201, 119, 65, 0.3);
+}
+
+.logo-btn {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.texto-btn {
+  font-weight: 600;
+}
+
+.icono-descarga {
+  width: 18px;
+  height: 18px;
+}
+
 
 .servicio {
   /* border : 1px solid var(--color-marron_sec); */

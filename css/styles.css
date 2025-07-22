@@ -603,6 +603,10 @@ header {
       font-size: var(--text-sm);
       margin: var(--spacing-sm) 1rem; /* Ajusta el margen para pantallas pequeñas */
     }
+    .sede span {
+      font-weight: bolder;
+      color: var(--color-marron);
+    }
 
     footer {
       display: flex;

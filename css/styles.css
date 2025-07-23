@@ -867,4 +867,91 @@ header {
   }
 }
 
+/* Comienzo del detalle de servicios */
 
+.menu_item {
+    background-color: var(--color-fondo);
+    padding: 5px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-left: 4px solid var(--color-marron);
+}
+
+.menu_item:hover {
+    background-color: #dcdfe2;
+    transform: translateX(5px);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 59, 108, 0.7); /* Un azul oscuro semitransparente */
+    backdrop-filter: blur(4px); /* Efecto de desenfoque del fondo */
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+}
+.modal {
+    position: fixed;
+    /* --- La magia para centrar la ventana --- */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    /* --- */
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+    width: 90%; /* Ancho responsivo */
+    max-width: 500px; /* Ancho máximo */
+    
+    /* Estado inicial para la animación de GSAP */
+    opacity: 0;
+    visibility: hidden;
+    /* La animación ahora escala desde el centro, no se mueve en Y */
+    transform: translate(-50%, -50%) scale(0.9); 
+}
+
+.modal_content {
+    padding: 25px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+.modal-header h2 {
+    font-size: 24px;
+    color: var(--color-primary);
+    font-family: var(--font-titulo-2_container);
+}
+
+.close_btn { 
+  background: none; 
+  border: none; 
+  font-size: 28px; 
+  cursor: pointer; 
+  color:var(--color-marron); }
+
+
+.modal_body { text-align: center; }
+
+
+
+.modal_img {
+    display: block;
+    margin: 2rem auto 20px auto;
+    max-width: 80%;
+    height: auto;
+    border-radius: 6px;
+}
+
+#modal_description { margin-bottom: 25px; text-align: center; line-height: 1.6; }

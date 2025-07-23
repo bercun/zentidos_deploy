@@ -80,12 +80,26 @@
           </p>
           <div class="lista_servicios">
             <ul class="lista-servicios-iz">
-              <li>Indiba facila </li>
-              <li>Indiba corporal </li>
-              <li>Indiba capilar</li>
+              <li data_modal_id="indiba_facial" class="menu_item">Indiba facial</li>
+              <li data_modal_id="indiba_corporal" class="menu_item">Indiba corporal</li>
+              <li data_modal_id="indiba_capilar" class="menu_item">Indiba capilar</li>
+             
             </ul>
-
           </div>
+          <div id="modal_window" class="modal">
+            <div class="modal_content">
+              <div id="modal_header">
+                <h2 id="modal_title"></h2>
+              </div>
+              <div class="modal_body">
+                <img id="modal_image_top" src="" alt="Imagen del tratamiento" class="modal_img">
+                <p id="modal_description"></p>
+                <img id="modal_image_bottom" src="" alt="Imagen del tratamiento" class="modal_img">
+                <button class="close_btn" id="close_btn">X</button>
+              </div>
+            </div>
+          </div>
+          <div id="overlay" class="overlay"></div>
         </div>
         <div class="servicio">
           <img src="./img/servicios/Indiba corporal.png" alt="corporal" class="servicio_img">
@@ -200,7 +214,7 @@
         </div>
       </div>
       <div class="boton-catalogo-logo">
-  <a href="https://bit.ly/4aPzp1O" download="Zentidos-Catalogo.pdf" class="btn-catalogo-logo">
+  <a href="https://bit.ly/4aPzp1O" download="Zentidos-Catalogo.pdf" class="btn-catalogo-logo" target="_blank" rel="noopener noreferrer">
     <img src="./img/icon/logozen1616.png" alt="Zentidos" class="logo-btn">
     <span class="texto-btn">Ver Catálogo</span>
     <svg class="icono-descarga" width="18" height="18" viewBox="0 0 24 24" fill="none">

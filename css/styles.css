@@ -907,7 +907,7 @@ header {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
     z-index: 1000;
     width: 90%; /* Ancho responsivo */
-    max-width: 500px; /* Ancho máximo */
+    max-width: 800px; /* Ancho máximo */
     
     /* Estado inicial para la animación de GSAP */
     opacity: 0;
@@ -942,7 +942,9 @@ header {
   color:var(--color-marron); }
 
 
-.modal_body { text-align: center; }
+.modal_body { 
+
+  text-align: center; }
 
 
 
@@ -954,4 +956,9 @@ header {
     border-radius: 6px;
 }
 
-#modal_description { margin-bottom: 25px; text-align: center; line-height: 1.6; }
+#modal_description { margin-bottom: 25px; 
+  text-align: center; 
+  line-height: 1.6; 
+  font-size: var(--text-xs);
+  color: var(--text-primary);
+}

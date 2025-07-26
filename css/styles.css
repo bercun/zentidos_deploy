@@ -842,29 +842,6 @@ header {
     max-width: 15rem; /* Ancho máximo para la imagen */
     margin-bottom: var(--spacing-md); /* Añade un margen inferior */
   }
-  
-  .sedes {
-    display: flex;
-    flex-direction: column !important; /* Cambia a columna para pantallas pequeñas */
-    align-items: center; /* Centra los elementos */
-  }
-  .sede {
-    width: 90%; /* Un poco menos del 100% para mejor presentación */
-    max-width: 600px; /* Limita el ancho máximo */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: var(--spacing-md);
-    margin-bottom: var(--spacing-lg);
-  }
-  .sede_img {
-    width: 100%; /* Ocupa todo el ancho del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-    max-width: 15rem; /* Ancho máximo para la imagen */
-    object-fit: cover; /* Mantiene las proporciones sin distorsión */
-    max-height: 10rem; /* Altura máxima para la imagen */
-  }
 }
 
 /* Comienzo del detalle de servicios */
@@ -897,27 +874,50 @@ header {
 }
 .modal {
     position: fixed;
-    /* --- La magia para centrar la ventana --- */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); 
-    /* --- */
     background: white;
     border-radius: 12px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
     z-index: 1000;
-    width: 90%; /* Ancho responsivo */
-    max-width: 800px; /* Ancho máximo */
-    
-    /* Estado inicial para la animación de GSAP */
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh; /* Altura máxima del 90% de la ventana */
     opacity: 0;
     visibility: hidden;
-    /* La animación ahora escala desde el centro, no se mueve en Y */
-    transform: translate(-50%, -50%) scale(0.9); 
+    transform: translate(-50%, -50%) scale(0.9);
+    overflow: hidden; /* Oculta el desbordamiento del modal principal */
 }
 
 .modal_content {
-    padding: 25px;
+    padding: 0; /* Removemos el padding aquí */
+    max-height: 90vh; /* Altura máxima igual al modal */
+    overflow-y: auto; /* Scroll vertical automático */
+    overflow-x: hidden; /* Sin scroll horizontal */
+    
+    /* Estilos para la barra de scroll personalizada */
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-marron) #f1f1f1;
+}
+
+/* Estilos para webkit browsers (Chrome, Safari, Edge) */
+.modal_content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal_content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.modal_content::-webkit-scrollbar-thumb {
+    background: var(--color-marron);
+    border-radius: 10px;
+}
+
+.modal_content::-webkit-scrollbar-thumb:hover {
+    background: var(--color-marron_sec);
 }
 
 .modal-header {
@@ -925,40 +925,98 @@ header {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #eee;
-    padding-bottom: 15px;
-    margin-bottom: 20px;
+    padding: 20px 25px 15px 25px; /* Agregamos padding aquí */
+    margin-bottom: 0;
+    position: sticky; /* Hace que el header se mantenga fijo al hacer scroll */
+    top: 0;
+    background: white;
+    z-index: 1;
 }
-.modal-header h2 {
-    font-size: 24px;
-    color: var(--color-primary);
-    font-family: var(--font-titulo-2_container);
+
+.modal_body {
+    padding: 25px; /* Movemos el padding aquí */
+    text-align: center;
 }
-
-.close_btn { 
-  background: none; 
-  border: none; 
-  font-size: 28px; 
-  cursor: pointer; 
-  color:var(--color-marron); }
-
-
-.modal_body { 
-
-  text-align: center; }
-
-
 
 .modal_img {
     display: block;
-    margin: 2rem auto 20px auto;
-    max-width: 80%;
+    margin: 1rem auto 20px auto;
+    max-width: 100%;
     height: auto;
     border-radius: 6px;
 }
 
-#modal_description { margin-bottom: 25px; 
-  text-align: center; 
-  line-height: 1.6; 
-  font-size: var(--text-xs);
-  color: var(--text-primary);
+#modal_description {
+    margin-bottom: 25px;
+    text-align: center;
+    line-height: 1.6;
+    font-size: var(--text-sm); /* Cambiado de text-xs a text-sm para mejor legibilidad */
+    color: var(--text-primary);
+    padding: 0 10px; /* Un poco de padding lateral */
+}
+
+/* Responsivo para móviles */
+@media (max-width: 555px) {
+    .modal {
+        width: 95%;
+        max-height: 85vh; /* Menos altura en móvil */
+    }
+    
+    .modal_content {
+        max-height: 85vh;
+    }
+    
+    .modal-header {
+        padding: 15px 20px 12px 20px;
+    }
+    
+    .modal_body {
+        padding: 20px 15px;
+    }
+    
+    #modal_description {
+        font-size: var(--text-xs);
+        padding: 0 5px;
+    }
+}
+
+.close_btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--color-marron);
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.close_btn:hover {
+    background: var(--color-marron_trans);
+    transform: rotate(90deg) scale(1.1);
+    color: white;
+}
+
+.close_btn:active {
+    transform: rotate(90deg) scale(0.95);
+}
+
+/* Responsivo para el botón */
+@media (max-width: 555px) {
+    .close_btn {
+        top: 1rem;
+        right: 1rem;
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+    }
 }
